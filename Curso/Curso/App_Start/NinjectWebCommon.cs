@@ -60,6 +60,9 @@ namespace Curso.App_Start
         {
             kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope();
             kernel.Bind<IManagerService>().To<ManagerService>().InSingletonScope().WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)));
+
+            kernel.Bind<IInterestedRepository>().To<InterestedRepository>().InSingletonScope();
+            kernel.Bind<IInterestedService>().To<InterestedService>().InSingletonScope().WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)));
         }        
     }
 }

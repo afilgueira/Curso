@@ -1,6 +1,7 @@
 namespace Repository.Interfaces
 {
     using Domain;
+    using System.Collections.Generic;
 
     /// <summary>
     /// The InterestedRepository interface.
@@ -33,5 +34,7 @@ namespace Repository.Interfaces
         /// The id.
         /// </param>
         void Delete(int id);
+        
+        List<Interested> GetAll();
     }
 }
