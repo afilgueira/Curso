@@ -56,6 +56,11 @@
             interested.Id = this.GetId();
             this.interesteds.Add(interested);
         }
+        
+        public List<Interested> GetAll()
+        {
+            return this.interesteds;
+        }
 
         /// <summary>
         /// The delete.
