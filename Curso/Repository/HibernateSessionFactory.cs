@@ -47,7 +47,7 @@
         {
             var connString = ConfigurationManager.ConnectionStrings["Curso"].ConnectionString;
             this.sessionFactory = Fluently.Configure()
-                                .Database(PostgreSQLConfiguration.Standard.ConnectionString(connString))
+                                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connString))
                                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ManagerMapping>())
                                 .ExposeConfiguration(BuildSchema)
                                 .BuildSessionFactory();
