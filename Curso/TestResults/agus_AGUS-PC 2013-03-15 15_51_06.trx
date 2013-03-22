@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="24a16364-074a-4e36-9031-4a0dfa9da45d" name="agus@AGUS-PC 2013-03-15 15:51:06" runUser="agus-PC\agus" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ad78ee6c-c1e1-4e25-9031-e966090afab9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="agus_AGUS-PC 2013-03-15 15_51_06">
+      <DeploymentItem filename="D:\Curso De Sistemas 2013\Curso\Curso\Domain\bin\Debug\Domain.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-03-15T15:51:06.0229469-03:00" queuing="2013-03-15T15:51:06.0739498-03:00" start="2013-03-15T15:51:06.0849505-03:00" finish="2013-03-15T15:51:06.4579718-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestUpdate" storage="d:\curso de sistemas 2013\curso\curso\unittests\bin\debug\unittests.dll" id="ce86862d-3a85-98c3-e3ab-28fda858cfdc">
+      <Execution id="f2f2d1d5-b45f-43d8-a531-d0eab3c0171b" />
+      <TestMethod codeBase="D:/Curso De Sistemas 2013/Curso/Curso/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.RealtyTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestUpdate" />
+    </UnitTest>
+    <UnitTest name="TestCreate" storage="d:\curso de sistemas 2013\curso\curso\unittests\bin\debug\unittests.dll" id="8fe0415d-0672-5141-b44e-ab6774f82232">
+      <Execution id="2163a3ee-ad41-4fad-a83f-f2e6b5347ead" />
+      <TestMethod codeBase="D:/Curso De Sistemas 2013/Curso/Curso/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.RealtyTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestCreate" />
+    </UnitTest>
+    <UnitTest name="TestDelete" storage="d:\curso de sistemas 2013\curso\curso\unittests\bin\debug\unittests.dll" id="4ed866ac-2fd1-3a97-e95f-aea3d3962215">
+      <Execution id="48c21b95-168f-4b8e-a329-2c1e7127d5b9" />
+      <TestMethod codeBase="D:/Curso De Sistemas 2013/Curso/Curso/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.RealtyTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestDelete" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4ed866ac-2fd1-3a97-e95f-aea3d3962215" executionId="48c21b95-168f-4b8e-a329-2c1e7127d5b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fe0415d-0672-5141-b44e-ab6774f82232" executionId="2163a3ee-ad41-4fad-a83f-f2e6b5347ead" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce86862d-3a85-98c3-e3ab-28fda858cfdc" executionId="f2f2d1d5-b45f-43d8-a531-d0eab3c0171b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="48c21b95-168f-4b8e-a329-2c1e7127d5b9" testId="4ed866ac-2fd1-3a97-e95f-aea3d3962215" testName="TestDelete" computerName="AGUS-PC" duration="00:00:00.0247023" startTime="2013-03-15T15:51:06.0889507-03:00" endTime="2013-03-15T15:51:06.4289701-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48c21b95-168f-4b8e-a329-2c1e7127d5b9">
+    </UnitTestResult>
+    <UnitTestResult executionId="2163a3ee-ad41-4fad-a83f-f2e6b5347ead" testId="8fe0415d-0672-5141-b44e-ab6774f82232" testName="TestCreate" computerName="AGUS-PC" duration="00:00:00.0006994" startTime="2013-03-15T15:51:06.4309702-03:00" endTime="2013-03-15T15:51:06.4349705-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2163a3ee-ad41-4fad-a83f-f2e6b5347ead">
+    </UnitTestResult>
+    <UnitTestResult executionId="f2f2d1d5-b45f-43d8-a531-d0eab3c0171b" testId="ce86862d-3a85-98c3-e3ab-28fda858cfdc" testName="TestUpdate" computerName="AGUS-PC" duration="00:00:00.0005652" startTime="2013-03-15T15:51:06.4369706-03:00" endTime="2013-03-15T15:51:06.4409708-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2f2d1d5-b45f-43d8-a531-d0eab3c0171b">
+    </UnitTestResult>
+  </Results>
+</TestRun>

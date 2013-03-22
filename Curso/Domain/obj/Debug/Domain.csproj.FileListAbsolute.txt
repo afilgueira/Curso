@@ -1,0 +1,5 @@
+D:\Curso De Sistemas 2013\Curso\Curso\Domain\bin\Debug\Domain.dll
+D:\Curso De Sistemas 2013\Curso\Curso\Domain\bin\Debug\Domain.pdb
+D:\Curso De Sistemas 2013\Curso\Curso\Domain\obj\Debug\ResolveAssemblyReference.cache
+D:\Curso De Sistemas 2013\Curso\Curso\Domain\obj\Debug\Domain.dll
+D:\Curso De Sistemas 2013\Curso\Curso\Domain\obj\Debug\Domain.pdb

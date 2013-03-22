@@ -1,0 +1,7 @@
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\bin\Debug\UnitTests.dll
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\bin\Debug\UnitTests.pdb
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\bin\Debug\Domain.dll
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\bin\Debug\Domain.pdb
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\obj\Debug\ResolveAssemblyReference.cache
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\obj\Debug\UnitTests.dll
+D:\Curso De Sistemas 2013\Curso\Curso\UnitTests\obj\Debug\UnitTests.pdb
