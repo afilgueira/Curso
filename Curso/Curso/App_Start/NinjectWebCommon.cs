@@ -66,6 +66,10 @@ namespace Curso.App_Start
 
             kernel.Bind<IInterestedRepository>().To<InterestedRepository>().InSingletonScope();
             kernel.Bind<IInterestedService>().To<InterestedService>().InSingletonScope().WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)));
+
+            kernel.Bind<IRealtyRepository>().To<RealtyRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
+            kernel.Bind<IRealtyService>().To<RealtyService>().InSingletonScope().WithConstructorArgument("IRealtyRepository", kernel.GetService(typeof(IRealtyRepository)));
+
         }        
     }
 }

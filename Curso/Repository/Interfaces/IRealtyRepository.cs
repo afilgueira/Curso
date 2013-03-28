@@ -5,26 +5,26 @@ namespace Repository.Interfaces
     /// <summary>
     /// The RealtyRepository interface.
     /// </summary>
-    public interface IRealtyRepository // Tip: Pensar porque no tiene un metodo de "update"
+    public interface IRealtyRepository : IRepository<Realty> // Tip: Pensar porque no tiene un metodo de "update"
     {
-        /// <summary>
-        /// The get.
-        /// </summary>
-        /// <param name="id">
-        /// The id.
-        /// </param>
-        /// <returns>
-        /// The Domain.Realty.
-        /// </returns>
-        Realty Get(int id);
+        ///// <summary>
+        ///// The get.
+        ///// </summary>
+        ///// <param name="id">
+        ///// The id.
+        ///// </param>
+        ///// <returns>
+        ///// The Domain.Realty.
+        ///// </returns>
+        //Realty Get(int id);
 
-        /// <summary>
-        /// The add.
-        /// </summary>
-        /// <param name="realty">
-        /// The realty.
-        /// </param>
-        void Add(Realty realty);
+        ///// <summary>
+        ///// The add.
+        ///// </summary>
+        ///// <param name="realty">
+        ///// The realty.
+        ///// </param>
+        //void Add(Realty realty);
 
         /// <summary>
         /// The delete.
@@ -32,6 +32,6 @@ namespace Repository.Interfaces
         /// <param name="id">
         /// The id.
         /// </param>
-        void Delete(int id);
+        //void Delete(int id);
     }
 }
