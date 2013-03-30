@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.Web.Mvc;
+
 using Domain;
 
 namespace Curso.ViewModels
@@ -29,12 +31,15 @@ namespace Curso.ViewModels
         /// </summary>
         public virtual Manager Manager { get; set; }
 
+        public int ManagerId { get; set; }
+         
         public virtual string ManagerName { get; set; }
         /// <summary>
         /// Gets or sets the homes.
         /// </summary>
         public virtual IList<Home> Homes { get; set; }
 
+        public List<SelectListItem> ManagersList { get; set; }
         /// <summary>
         /// Only for NHibernate
         /// </summary>

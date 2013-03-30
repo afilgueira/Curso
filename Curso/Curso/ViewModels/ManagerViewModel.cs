@@ -21,6 +21,7 @@ namespace Curso.ViewModels
         /// </summary>
         public int Age { get; set; }
 
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerViewModel"/> class.
         /// </summary>
