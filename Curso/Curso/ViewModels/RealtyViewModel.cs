@@ -37,7 +37,7 @@ namespace Curso.ViewModels
         /// <summary>
         /// Gets or sets the homes.
         /// </summary>
-        public virtual IList<Home> Homes { get; set; }
+        public virtual IList<House> Homes { get; set; }
 
         public List<SelectListItem> ManagersList { get; set; }
         /// <summary>
@@ -66,14 +66,13 @@ namespace Curso.ViewModels
             this.Details = details;
             this.Hire(manager);
             this.ManagerName = manager.Name;
-            this.Homes = new List<Home>();
+            this.Homes = new List<House>();
         }
 
         private void Hire(Manager manager)
         {
             this.Manager = manager;
-            //FIXME
-            //this.Manager.Realties.Add(this);
+            
         }
     }
 }
