@@ -64,9 +64,11 @@
     <Compile Include="HibernateSessionFactory.cs" />
     <Compile Include="IHibernateSessionFactory.cs" />
     <Compile Include="Impl\BaseRepository.cs" />
+    <Compile Include="Impl\HouseRepository.cs" />
     <Compile Include="Impl\InterestedRepository.cs" />
     <Compile Include="Impl\ManagerRepository.cs" />
     <Compile Include="Impl\RealtyRepository.cs" />
+    <Compile Include="Interfaces\IHouseRepository.cs" />
     <Compile Include="Interfaces\IInterestedRepository.cs" />
     <Compile Include="Interfaces\IManagerRepository.cs" />
     <Compile Include="Interfaces\IRealtyRepository.cs" />

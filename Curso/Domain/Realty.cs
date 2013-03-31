@@ -30,7 +30,7 @@
         /// <summary>
         /// Gets or sets the homes.
         /// </summary>
-        public virtual IList<Home> Homes { get; set; }
+        public virtual IList<House> Homes { get; set; }
 
         /// <summary>
         /// Only for NHibernate
@@ -56,7 +56,7 @@
             this.Address = address;
             this.Details = details;
             this.Hire(manager);
-            this.Homes = new List<Home>();
+            this.Homes = new List<House>();
         }
 
         /// <summary>

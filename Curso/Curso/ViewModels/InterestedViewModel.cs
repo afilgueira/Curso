@@ -26,7 +26,7 @@ namespace Curso.ViewModels
         /// <summary>
         /// Gets the homes.
         /// </summary>
-        public List<Home> Homes { get; private set; }
+        public List<House> Homes { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Interested"/> class.
@@ -42,7 +42,7 @@ namespace Curso.ViewModels
             this.Id = id;
             this.Name = name;
             this.Phone = phone;
-            this.Homes = new List<Home>();
+            this.Homes = new List<House>();
         }
 
         public InterestedViewModel() { }

@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappings\InterestedMapping.cs" />
+    <Compile Include="Mappings\HouseMapping.cs" />
     <Compile Include="Mappings\RealtyMapping.cs" />
     <Compile Include="Mappings\ManagerMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
