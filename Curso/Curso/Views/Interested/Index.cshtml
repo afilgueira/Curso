@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Lista de Interesados";
+}
+
+<div class="row-fluid metro">
+    <div class="span12">
+        
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr> 
+                        <td>@m.Name</td>
+                        <td>@m.Phone</td>
+                        <td>
+                            <a href="@Url.Action("Edit","Interested", new { id = m.Id })">
+                                <span class="icon icon-pencil"/>
+                            </a>&nbsp;
+                            <a href="@Url.Action("Delete", "Interested", new { id = m.Id })">
+                                <span class="icon icon-remove-3"/>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
+    <div class="container">
+        <div class="row-fluid metro">
+            <div class="span1 offset10">
+                <a class="win-command" href="@Url.Action("Edit", "Interested", new {id = 0})"> <!-- ID = 0 -> New user-->
+                    <span class="win-commandimage win-commandring">&#xe03e;</span>
+                    <span class="win-label">Add</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
