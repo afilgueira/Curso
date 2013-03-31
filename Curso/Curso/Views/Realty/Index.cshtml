@@ -21,7 +21,7 @@
                         <td>@m.Details</td>
                         <td>@m.ManagerName</td>
                         <td>
-                            <a href="@Url.Action("Index","House", new { id = m.Id })">
+                            <a href="@Url.Action("Index", "House", new { realtyId = m.Id })">
                                 <span class="icon icon-pencil"/>
                             </a>&nbsp;
                             <a href="@Url.Action("Edit","Realty", new { id = m.Id })">
