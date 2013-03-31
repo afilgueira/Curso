@@ -1,0 +1,5 @@
+C:\Users\gdd2c2012\Curso\Curso\Domain\bin\Debug\Domain.dll
+C:\Users\gdd2c2012\Curso\Curso\Domain\bin\Debug\Domain.pdb
+C:\Users\gdd2c2012\Curso\Curso\Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gdd2c2012\Curso\Curso\Domain\obj\Debug\Domain.dll
+C:\Users\gdd2c2012\Curso\Curso\Domain\obj\Debug\Domain.pdb

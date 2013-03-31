@@ -1,0 +1,16 @@
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Services.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Services.pdb
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Domain.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Repository.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\NHibernate.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\FluentNHibernate.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Domain.NH.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Iesi.Collections.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Domain.pdb
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Repository.pdb
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\NHibernate.xml
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Domain.NH.pdb
+C:\Users\gdd2c2012\Curso\Curso\Services\bin\Debug\Iesi.Collections.xml
+C:\Users\gdd2c2012\Curso\Curso\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gdd2c2012\Curso\Curso\Services\obj\Debug\Services.dll
+C:\Users\gdd2c2012\Curso\Curso\Services\obj\Debug\Services.pdb
