@@ -1,0 +1,7 @@
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\bin\Debug\Domain.dll
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\bin\Debug\Domain.pdb
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\gdd2c2012\Curso\Curso\UnitTests\obj\Debug\UnitTests.pdb
