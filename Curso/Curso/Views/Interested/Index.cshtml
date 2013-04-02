@@ -11,6 +11,7 @@
                     <th>Nombre</th>
                     <th>Telefono</th>
                     <th>Acciones</th>
+                    <th>Casas</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,10 @@
                     <tr> 
                         <td>@m.Name</td>
                         <td>@m.Phone</td>
+                        <td><a href="@Url.Action("Index", "House", new {realtyId = m.Id })">
+                                <span class="win-label">Watch</span>
+                            </a>&nbsp;
+                        </td>
                         <td>
                             <a href="@Url.Action("Edit","Interested", new { id = m.Id })">
                                 <span class="icon icon-pencil"/>
