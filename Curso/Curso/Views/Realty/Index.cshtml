@@ -10,6 +10,7 @@
                     <th>Direccion</th>
                     <th>Detalles</th>
                     <th>Manager</th>
+                    <th>Casas</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -20,10 +21,14 @@
                         <td>@m.Address</td>
                         <td>@m.Details</td>
                         <td>@m.ManagerName</td>
-                        <td>
-                            <a href="@Url.Action("Index", "House", new { realtyId = m.Id })">
-                                <span class="icon icon-pencil"/>
+                        <td><a href="@Url.Action("Edit", "House", new {id=0, realtyId = m.Id })">
+                                <span class="win-label">Add</span>
                             </a>&nbsp;
+                            <a href="@Url.Action("Index", "House", new {realtyId = m.Id })">
+                                <span class="win-label">Watch</span>
+                            </a>&nbsp;
+                        </td>
+                        <td>
                             <a href="@Url.Action("Edit","Realty", new { id = m.Id })">
                                 <span class="icon icon-pencil"/>
                             </a>&nbsp;
@@ -41,10 +46,23 @@
     <div class="container">
         <div class="row-fluid metro">
             <div class="span1 offset10">
-                <a class="win-command" href="@Url.Action("Edit", "Realty", new {id = 0})"> <!-- ID = 0 -> New user-->
-                    <span class="win-commandimage win-commandring">&#xe03e;</span>
-                    <span class="win-label">Add</span>
-                </a>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a class="win-command" href="@Url.Action("Edit", "Realty", new {id = 0})"> <!-- ID = 0 -> New user-->
+                                    <span class="win-commandimage win-commandring">&#xe03e;</span>
+                                    <span class="win-label">Add</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="win-command" href="@Url.Action("Index", "Home")"> 
+                                    <span class="win-label">Volver</span>
+                                </a>
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -14,17 +14,19 @@ namespace Curso.ViewModels
         /// <summary>
         /// Gets the address.
         /// </summary>
-        public virtual string Address { get; private set; }
+        public virtual string Address { get; set; }
 
         /// <summary>
         /// Gets the details.
         /// </summary>
-        public virtual string Details { get; private set; }
+        public virtual string Details { get; set; }
 
         /// <summary>
         /// Gets the interested people.
         /// </summary>
         public virtual IList<Interested> InterestedPeople { get; private set; }
+
+        public virtual int RealtyId { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="House"/> class.

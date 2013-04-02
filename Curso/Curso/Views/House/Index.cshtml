@@ -10,6 +10,7 @@
                 <tr>
                     <th>Direccion</th>
                     <th>Detalles</th>
+                    <th>Interesados</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -19,8 +20,15 @@
                     <tr> 
                         <td>@m.Address</td>
                         <td>@m.Details</td>
+                        <td><a href="#">
+                                <span class="win-label">Add</span>
+                            </a>&nbsp;
+                            <a href="#">
+                                <span class="win-label">Watch</span>
+                            </a>&nbsp;
+                        </td>
                         <td>
-                            <a href="@Url.Action("Edit","House", new { id = m.Id })">
+                            <a href="@Url.Action("Edit", "House", new { id = m.Id, realtyId = m.Realty.Id})">
                                 <span class="icon icon-pencil"/>
                             </a>&nbsp;
                             <a href="@Url.Action("Delete", "House", new { id = m.Id })">
@@ -37,9 +45,8 @@
     <div class="container">
         <div class="row-fluid metro">
             <div class="span1 offset10">
-                <a class="win-command" href="@Url.Action("Edit", "House", new {id = 0})"> <!-- ID = 0 -> New user-->
-                    <span class="win-commandimage win-commandring">&#xe03e;</span>
-                    <span class="win-label">Add</span>
+                <a class="win-command" href="@Url.Action("Index", "Realty")"> 
+                    <span class="win-label">Volver</span>
                 </a>
             </div>
         </div>

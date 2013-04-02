@@ -14,9 +14,9 @@ namespace Curso.Controllers
     public class HouseController : Controller
     {
         private readonly IHouseService houseService;
-        private int RealtyId { get; set; }
+        
         private readonly IRealtyService realtyService;
-        private Realty Realty { get; set; }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerController"/> class.
         /// </summary>
@@ -37,10 +37,10 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Index(int realtyId)
         {
-            this.RealtyId = realtyId;
+            
 
-            this.Realty = this.realtyService.Get(this.RealtyId);
-            List<HouseViewModel> model = this.houseService.GetAll().Select(m => new HouseViewModel(m.Id,m.Realty, m.Address, m.Details)).Where(m => m.Realty.Equals(this.Realty)).ToList();
+            
+            List<HouseViewModel> model = this.houseService.GetAll().Select(m => new HouseViewModel(m.Id,m.Realty, m.Address, m.Details)).Where(m => m.Realty.Id==realtyId).ToList();
             
             return this.View(model);
         }
@@ -54,10 +54,9 @@ namespace Curso.Controllers
         /// <returns>
         /// The System.Web.Mvc.ActionResult.
         /// </returns>
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id,int realtyId)
         {
             var model = new HouseViewModel();
-            
             
             if (id != 0)
             {
@@ -65,6 +64,10 @@ namespace Curso.Controllers
                 model = new HouseViewModel(house.Id, house.Realty, house.Address, house.Details);
             }
 
+            model.RealtyId = realtyId;
+            
+            model.Realty = this.realtyService.Get(realtyId);
+            
             return this.View(model);
         }
 
@@ -79,17 +82,17 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Update(HouseViewModel model)
         {
-
+            model.Realty = this.realtyService.Get(model.RealtyId);
             if (model.Id == 0)
             {
-                this.houseService.Create(this.Realty, model.Address,model.Details);
+                this.houseService.Create(model.Realty, model.Address,model.Details);
             }
             else
             {
                 this.houseService.Update(model.Id,model.Address, model.Details);
             }
 
-            return this.RedirectToAction("Index");
+            return this.RedirectToAction("Index", new { realtyId = model.RealtyId });
         }
 
         /// <summary>
@@ -103,8 +106,9 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Delete(int id)
         {
+            int mRealtyId = this.houseService.Get(id).Realty.Id;
             this.houseService.Delete(id);
-            return this.RedirectToAction("Index");
+            return this.RedirectToAction("Index", new { realtyId = mRealtyId });
         }
     }
 }
