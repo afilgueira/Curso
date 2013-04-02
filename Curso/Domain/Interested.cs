@@ -43,7 +43,9 @@
             this.Homes = new List<House>();
         }
 
-        public Interested() { }
+        public Interested() 
+        { 
+        }
         /// <summary>
         /// The update.
         /// </summary>

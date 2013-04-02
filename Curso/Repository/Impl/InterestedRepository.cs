@@ -10,8 +10,18 @@
     /// <summary>
     /// The interested repository.
     /// </summary>
-    public class InterestedRepository : IInterestedRepository
-    {
+    public class InterestedRepository : BaseRepository<Interested>, IInterestedRepository
+    {  
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InterestedRepository"/> class.
+        /// </summary>
+        /// <param name="hibernateSessionFactory">
+        /// The hibernate session factory.
+        /// </param>
+        public InterestedRepository(IHibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {   
+        }
+        /*
         /// <summary>
         /// The Interesteds.
         /// </summary>
@@ -84,6 +94,6 @@
         {
             this.idCounter++;
             return this.idCounter;
-        }
+        }*/
     }
 }

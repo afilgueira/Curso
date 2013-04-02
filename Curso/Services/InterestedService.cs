@@ -32,9 +32,15 @@ namespace Services
         /// <returns>
         /// The System.Collections.Generic.List`1[T -&gt; Domain.Interested].
         /// </returns>
-        public List<Interested> GetAll()
+        public IList<Interested> GetAll()
         {
-            return this.interestedRepository.GetAll();
+            IList<Interested> result = null;
+            this.interestedRepository.GetSessionFactory().SessionInterceptor(() =>
+            {
+                result = this.interestedRepository.GetAll();
+            });
+
+            return result;
         }
 
         /// <summary>
@@ -48,7 +54,12 @@ namespace Services
         /// </returns>
         public Interested Get(int id)
         {
-            return this.interestedRepository.Get(id);
+            Interested result = null;
+            this.interestedRepository.GetSessionFactory().SessionInterceptor(() =>
+            {
+                result = this.interestedRepository.Get(id);
+            });
+            return result;
         }
 
         /// <summary>
@@ -62,8 +73,11 @@ namespace Services
         /// </param>
         public void Create(string name, string phone) // TIP: Que pasaria si en vez de 2 parametros, el manager tuviera 100???
         {
-            var interested = new Interested(name, phone);
-            this.interestedRepository.Add(interested);
+            this.interestedRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var interested = new Interested(name, phone);
+                this.interestedRepository.Add(interested);
+            });
         }
 
         /// <summary>
@@ -80,8 +94,11 @@ namespace Services
         /// </param>
         public void Update(int id, string name, string phone)
         {
-            var interested = this.interestedRepository.Get(id);
-            interested.Update(name, phone);
+            this.interestedRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var interested = this.interestedRepository.Get(id);
+                interested.Update(name, phone);
+            });
         }
 
         /// <summary>
@@ -92,9 +109,12 @@ namespace Services
         /// </param>
         public void Delete(int id)
         {
-            var interested = this.interestedRepository.Get(id);
-            interested.Delete();
-            this.interestedRepository.Delete(id);
+            this.interestedRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var interested = this.interestedRepository.Get(id);
+                interested.Delete();
+                this.interestedRepository.Delete(interested);
+            });
         }
     }
 }

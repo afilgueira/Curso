@@ -16,17 +16,17 @@ namespace Curso.ViewModels
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets the phone.
         /// </summary>
-        public string Phone { get; private set; }
+        public string Phone { get; set; }
 
         /// <summary>
         /// Gets the homes.
         /// </summary>
-        public List<House> Homes { get; private set; }
+        public List<House> Homes { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Interested"/> class.
