@@ -15,7 +15,7 @@ namespace Domain.NH.Mappings
             this.Map(house => house.Address).Not.Nullable().Length(50).Not.LazyLoad();
             this.Map(house => house.Details).Not.Nullable().Length(200).Not.LazyLoad();
             this.References(house => house.Realty).Not.Nullable().Not.LazyLoad();
-            this.HasManyToMany(house => house.InterestedPeople).AsBag().Table("InterestedToHouse").ParentKeyColumn("House_Id").Inverse().Not.LazyLoad() ;
+            this.HasManyToMany(house => house.Interesteds).AsBag().ParentKeyColumn("House_Id").ChildKeyColumn("Interested_Id").Not.LazyLoad() ;
         }
     }
 }

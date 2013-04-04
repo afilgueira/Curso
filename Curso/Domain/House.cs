@@ -26,7 +26,7 @@
         /// <summary>
         /// Gets the interested people.
         /// </summary>
-        public virtual IList<Interested> InterestedPeople { get; set; }
+        public virtual IList<Interested> Interesteds { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="House"/> class.
@@ -45,7 +45,7 @@
             this.Assign(realty);
             this.Address = address;
             this.Details = details;
-            this.InterestedPeople = new List<Interested>();
+            this.Interesteds = new List<Interested>();
         }
 
         /// <summary>
@@ -68,7 +68,7 @@
         /// </summary>
         public virtual void Delete()
         {
-            foreach (var interested in this.InterestedPeople)
+            foreach (var interested in this.Interesteds)
             {
                 this.RemoveInterested(interested); // Desvinculo la casa del interesado
             }
