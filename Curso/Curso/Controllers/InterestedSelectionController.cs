@@ -27,7 +27,6 @@ namespace Curso.Controllers
 
         public ActionResult Index(int houseId)
         {
-<<<<<<< .mine
             IList<Interested> interesteds = this.interestedService.GetAll();
             IList<Interested> interestedsFiltereds = new List<Interested>();
             foreach (var interested in interesteds)
@@ -42,26 +41,8 @@ namespace Curso.Controllers
                 }
             }
             List<InterestedViewModel> model = interestedsFiltereds.Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone)).ToList();
-
-
-=======
-            IList<Interested> interesteds = this.interestedService.GetAll();
-            IList<Interested> interestedsFiltereds = new List<Interested>();
-            foreach (var interested in interesteds)
-            {
-                foreach (var home in interested.Homes)
-                {
-                    if (home.Id==houseId)
-                    {
-                        interestedsFiltereds.Add(interested);
-                        break;
-                    }
-                }
-            }
-            List<InterestedViewModel> model = interestedsFiltereds.Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone)).ToList();
-            return this.View(interesteds);
+            return this.View(model);
             
->>>>>>> .theirs
         }
 
     }
