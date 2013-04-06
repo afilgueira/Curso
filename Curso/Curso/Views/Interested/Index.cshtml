@@ -10,8 +10,8 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Telefono</th>
-                    <th>Acciones</th>
                     <th>Casas</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,10 +42,24 @@
     <div class="container">
         <div class="row-fluid metro">
             <div class="span1 offset10">
-                <a class="win-command" href="@Url.Action("Edit", "Interested", new {id = 0})"> <!-- ID = 0 -> New user-->
-                    <span class="win-commandimage win-commandring">&#xe03e;</span>
-                    <span class="win-label">Add</span>
-                </a>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a class="win-command" href="@Url.Action("Edit", "Interested", new {id = 0})"> <!-- ID = 0 -> New user-->
+                                    <span class="win-commandimage win-commandring">&#xe03e;</span>
+                                    <span class="win-label">Add</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="win-command" href="@Url.Action("Index", "Home")"> 
+                                    <span class="win-commandimage win-commandring">&#xe1cd;</span>
+                                    <span class="win-label">Volver</span>
+                                </a>
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
             </div>
         </div>
     </div>
