@@ -81,6 +81,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HouseController.cs" />
     <Compile Include="Controllers\InterestedController.cs" />
+    <Compile Include="Controllers\InterestedSelectionController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\RealtyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,6 +267,8 @@
     <Content Include="Views\Realty\Edit.cshtml" />
     <Content Include="Views\House\Index.cshtml" />
     <Content Include="Views\House\Edit.cshtml" />
+    <Content Include="Views\InterestedSelection\Edit.cshtml" />
+    <Content Include="Views\InterestedSelection\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
