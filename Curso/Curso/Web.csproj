@@ -260,7 +260,8 @@
     <None Include="Content\font\opensans-semibold-webfont.woff" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Manager\Edit.cshtml" />
-    <Content Include="Views\Interested\Edit.cshtml" />    <Content Include="Views\Interested\Index.cshtml" />
+    <Content Include="Views\Interested\Edit.cshtml" />
+    <Content Include="Views\Interested\Index.cshtml" />
     <Content Include="Views\Realty\Index.cshtml" />
     <Content Include="Views\Realty\Edit.cshtml" />
     <Content Include="Views\House\Index.cshtml" />
