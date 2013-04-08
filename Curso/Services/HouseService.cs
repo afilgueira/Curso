@@ -11,6 +11,7 @@ namespace Services
     public class HouseService:IHouseService
     {
         private readonly IRepository<House> houseRepository;
+        private readonly IInterestedRepository interestedRepository;
         
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerService"/> class.
@@ -18,9 +19,10 @@ namespace Services
         /// <param name="managerRepository">
         /// The manager repository.
         /// </param>
-        public HouseService(IRepository<House> houseRepository)
+        public HouseService(IRepository<House> houseRepository, IInterestedRepository interestedRepository)
         {
             this.houseRepository = houseRepository;
+            this.interestedRepository = interestedRepository;
         }
 
         /// <summary>
@@ -121,5 +123,16 @@ namespace Services
                 this.houseRepository.Delete(house);
             });
         }
+        public void Delete(int id,int idin)
+        {
+            this.houseRepository.GetSessionFactory().TransactionalInterceptor(() =>
+                {
+                    var interested = this.interestedRepository.Get(idin);
+                    var house = this.houseRepository.Get(id);
+                    house.RemoveInterested(interested);
+                });
+
+        }
+        
     }
 }

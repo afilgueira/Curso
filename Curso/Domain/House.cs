@@ -95,7 +95,8 @@
         /// </param>
         public virtual void RemoveInterested(Interested interested)
         {
-            // TODO: Completar
+            this.Interesteds.Remove(interested);
+            interested.Homes.Remove(this);
         }
 
         /// <summary>

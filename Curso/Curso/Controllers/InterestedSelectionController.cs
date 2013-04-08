@@ -40,7 +40,7 @@ namespace Curso.Controllers
                     }
                 }
             }
-            List<InterestedViewModel> model = interestedsFiltereds.Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone)).ToList();
+            List<InterestedViewModel> model = interestedsFiltereds.Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone,houseId)).ToList();
             return this.View(model);
             
         }
@@ -72,6 +72,17 @@ namespace Curso.Controllers
             
             return this.RedirectToAction("Index", new { houseId = model.Id });
 
-        }   
+        }
+
+        public ActionResult Delete(int id, int houseId)
+        {
+            
+
+           
+
+            this.houseService.Delete(houseId,id);
+
+            return this.RedirectToAction("Index", new { houseId = houseId });
+        }
     }
 }

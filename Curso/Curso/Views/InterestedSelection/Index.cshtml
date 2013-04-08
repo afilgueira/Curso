@@ -20,9 +20,9 @@
                         <td>@m.Name</td>
                         <td>@m.Phone</td>
                         <td>
-                            <a href="@Url.Action("Edit","InterestedSelection", new { id = m.Id })">
-                                <span class="win-label">Seleccionar</span>
-                            </a>&nbsp;
+                            <a href="@Url.Action("Delete", "InterestedSelection", new { id = m.Id, houseId=m.HouseId })">
+                                <span class="icon icon-remove-3"/>
+                            </a>
                         </td>
                     </tr>
                 }

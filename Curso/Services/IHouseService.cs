@@ -61,5 +61,6 @@ namespace Services
         /// The id.
         /// </param>
         void Delete(int id);
+        void Delete(int id,int intest);
     }
 }
