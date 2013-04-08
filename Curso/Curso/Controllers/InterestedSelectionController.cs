@@ -45,5 +45,33 @@ namespace Curso.Controllers
             
         }
 
+        public ActionResult Edit(int id)
+        {
+            var model = new HouseViewModel();
+
+
+            if (id != 0)
+            {
+                var house = this.houseService.Get(id);
+                model = new HouseViewModel(house.Id, house.Realty,house.Address, house.Details);
+            }
+            //aca meti mano para cargar la lista
+            var interesteds = this.interestedService.GetAll().Select(interested => new SelectListItem { Value = interested.Id.ToString(), Text = interested.Name }).ToList();
+            model.InterestedsList = interesteds;
+            //
+            return this.View(model);
+        }
+
+        public ActionResult Update( HouseViewModel model)
+        {
+
+            var interested = this.interestedService.Get(model.InterestedId);
+
+            this.houseService.Update(model.Id, interested);
+
+            
+            return this.RedirectToAction("Index", new { houseId = model.Id });
+
+        }   
     }
 }

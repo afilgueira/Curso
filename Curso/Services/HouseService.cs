@@ -98,6 +98,14 @@ namespace Services
             });
         }
 
+        public void Update(int id, Interested interested){
+            this.houseRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var house = this.houseRepository.Get(id);
+                house.AddInterested(interested);
+            });
+        }
+
         /// <summary>
         /// The delete.
         /// </summary>

@@ -84,7 +84,7 @@
         /// </param>
         public virtual void AddInterested(Interested interested)
         {
-            // TODO: Completar
+            this.Interesteds.Add(interested);
         }
 
         /// <summary>

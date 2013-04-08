@@ -52,6 +52,7 @@ namespace Services
         /// The age.
         /// </param>
         void Update(int id, string address, string details);
+        void Update(int id, Interested interested);
 
         /// <summary>
         /// The delete.

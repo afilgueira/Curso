@@ -20,7 +20,7 @@
                     <tr> 
                         <td>@m.Address</td>
                         <td>@m.Details</td>
-                        <td><a href="@Url.Action("Edit", "Interested", new {id=0, houseId = m.Id })">
+                        <td><a href="@Url.Action("Edit", "InterestedSelection", new {id = m.Id })">
                                 <span class="win-label">Add</span>
                             </a>&nbsp;
                             <a href="@Url.Action("Index", "InterestedSelection", new {houseId = m.Id })">

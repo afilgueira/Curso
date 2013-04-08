@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 using Domain;
 
@@ -9,6 +10,10 @@ namespace Curso.ViewModels
 {
     public class HouseViewModel
     {
+        private int p;
+        private string p_2;
+        private string p_3;
+
          public virtual Realty Realty { get; set; }
 
         /// <summary>
@@ -27,6 +32,10 @@ namespace Curso.ViewModels
         public virtual IList<Interested> InterestedPeople { get; private set; }
 
         public virtual int RealtyId { get; set; }
+
+        public int InterestedId { get; set; }
+
+        public List<SelectListItem> InterestedsList { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="House"/> class.
@@ -52,10 +61,12 @@ namespace Curso.ViewModels
 
         public HouseViewModel() { }
 
+       
         private void Assign(Realty realty)
         {
             this.Realty = realty;
             
         }
+       
     }
 }

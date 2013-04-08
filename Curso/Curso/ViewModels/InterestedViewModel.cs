@@ -29,6 +29,10 @@ namespace Curso.ViewModels
         /// </summary>
         public List<House> Homes { get; set; }
 
+        public virtual Interested Interested { get; set; }
+
+      
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Interested"/> class.
         /// </summary>
@@ -45,6 +49,7 @@ namespace Curso.ViewModels
             this.Phone = phone;
             this.Homes = new List<House>();
         }
+        public List<SelectListItem> InterestedsList { get; set; }
 
         public InterestedViewModel() { }
     }
