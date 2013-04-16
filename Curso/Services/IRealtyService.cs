@@ -37,7 +37,7 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        void Create(string address, string details, Manager manager);
+        void Create(string address, string details, int manager);
 
         /// <summary>
         /// The update.
@@ -51,7 +51,7 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        void Update(int id, string address, string details, Manager manager);
+        void Update(int id, string address, string details, int manager);
 
         /// <summary>
         /// The delete.

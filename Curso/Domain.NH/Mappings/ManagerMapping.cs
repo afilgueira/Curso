@@ -15,7 +15,7 @@
             this.Id(manager => manager.Id).GeneratedBy.Identity();
             this.Map(manager => manager.Name).Not.Nullable().Length(50).Not.LazyLoad();
             this.Map(manager => manager.Age).Not.Nullable().Not.LazyLoad();
-            this.HasMany(manager => manager.Realties).AsBag().Table("Realty").KeyColumn("Manager_Id").Inverse().Not.LazyLoad() ;
+            this.HasMany(manager => manager.Realties).AsBag().Table("Realty").KeyColumn("Manager_Id").Inverse().LazyLoad();
 
             // References(manager => manager.Link).Nullable().Not.LazyLoad();
             // HasManyToMany(manager => manager.MuchosAMuchos).AsBag().ParentKeyColumn("Manager_Id").ChildKeyColumn("Otro_Id").Table("UserToRole").LazyLoad();

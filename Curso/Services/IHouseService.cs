@@ -37,7 +37,7 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        void Create(Realty realty, string address, string details);
+        void Create(int realty, string address, string details);
 
         /// <summary>
         /// The update.

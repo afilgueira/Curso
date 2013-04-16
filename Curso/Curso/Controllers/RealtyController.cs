@@ -87,15 +87,15 @@ namespace Curso.Controllers
         /// The System.Web.Mvc.ActionResult.
         public ActionResult Update(RealtyViewModel model)
         {
-            var manager = this.managerService.Get(model.ManagerId);
+            //var manager = this.managerService.Get(model.ManagerId);
             if (model.Id == 0)
             {
                 
-                this.realtyService.Create(model.Address, model.Details, manager);
+                this.realtyService.Create(model.Address, model.Details, model.ManagerId);
             }
             else
             {
-                this.realtyService.Update(model.Id, model.Address, model.Details, manager);
+                this.realtyService.Update(model.Id, model.Address, model.Details, model.ManagerId);
             }
 
             return this.RedirectToAction("Index");

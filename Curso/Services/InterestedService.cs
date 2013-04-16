@@ -14,16 +14,18 @@ namespace Services
         /// The interested repository.
         /// </summary>
         private readonly IInterestedRepository interestedRepository;
-        
+
+        private readonly IRepository<House> houseRepository;
         /// <summary>
         /// Initializes a new instance of the <see cref="InterestedService"/> class.
         /// </summary>
         /// <param name="interestedRepository">
         /// The interested repository.
         /// </param>
-        public InterestedService(IInterestedRepository interestedRepository)
+        public InterestedService(IInterestedRepository interestedRepository, IRepository<House> horepo)
         {
             this.interestedRepository = interestedRepository;
+            this.houseRepository = horepo;
         }
 
         /// <summary>
@@ -38,6 +40,18 @@ namespace Services
             this.interestedRepository.GetSessionFactory().SessionInterceptor(() =>
             {
                 result = this.interestedRepository.GetAll();
+            });
+
+            return result;
+        }
+
+        public IList<Interested> GetAll(int houseId)
+        {
+            IList<Interested> result = null;
+            this.interestedRepository.GetSessionFactory().SessionInterceptor(() =>
+            {
+                var house = this.houseRepository.Get(houseId);
+                result = this.interestedRepository.GetAll().Where(m => m.Homes.Contains(house)).ToList();
             });
 
             return result;

@@ -12,16 +12,17 @@ namespace Services
     public class RealtyService : IRealtyService
     {
         private readonly IRealtyRepository realtyRepository;
-        
+        private readonly IManagerRepository managerRepository;
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerService"/> class.
         /// </summary>
         /// <param name="managerRepository">
         /// The manager repository.
         /// </param>
-        public RealtyService(IRealtyRepository realtyRepository)
+        public RealtyService(IRealtyRepository realtyRepository, IManagerRepository managerRepository)
         {
             this.realtyRepository = realtyRepository;
+            this.managerRepository = managerRepository;
         }
 
         /// <summary>
@@ -69,10 +70,11 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        public void Create(string address, string details, Manager manager) 
+        public void Create(string address, string details, int managerId) 
         {
             this.realtyRepository.GetSessionFactory().TransactionalInterceptor(() =>
             {
+                var manager = this.managerRepository.Get(managerId);
                 var realty = new Realty(address,details,manager);
                 this.realtyRepository.Add(realty);
             });
@@ -90,10 +92,11 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        public void Update(int id,string address, string details, Manager manager)
+        public void Update(int id,string address, string details, int managerId)
         {
             this.realtyRepository.GetSessionFactory().TransactionalInterceptor(() =>
             {
+                var manager = this.managerRepository.Get(managerId);
                 var realty = this.realtyRepository.Get(id);
                 realty.Update(address,details,manager);
             });

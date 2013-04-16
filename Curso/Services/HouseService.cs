@@ -12,17 +12,18 @@ namespace Services
     {
         private readonly IRepository<House> houseRepository;
         private readonly IInterestedRepository interestedRepository;
-        
+        private readonly IRealtyRepository realtyRepository;
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerService"/> class.
         /// </summary>
         /// <param name="managerRepository">
         /// The manager repository.
         /// </param>
-        public HouseService(IRepository<House> houseRepository, IInterestedRepository interestedRepository)
+        public HouseService(IRepository<House> houseRepository, IInterestedRepository interestedRepository, IRealtyRepository realtyRepository)
         {
             this.houseRepository = houseRepository;
             this.interestedRepository = interestedRepository;
+            this.realtyRepository = realtyRepository;
         }
 
         /// <summary>
@@ -70,10 +71,11 @@ namespace Services
         /// <param name="age">
         /// The age.
         /// </param>
-        public void Create(Realty realty, string address, string details) 
+        public void Create(int realtyId, string address, string details) 
         {
             this.houseRepository.GetSessionFactory().TransactionalInterceptor(() =>
             {
+                var realty = this.realtyRepository.Get(realtyId);
                 var house = new House(realty, address, details);
                 this.houseRepository.Add(house);
             });

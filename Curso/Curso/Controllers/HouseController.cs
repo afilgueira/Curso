@@ -66,7 +66,7 @@ namespace Curso.Controllers
 
             model.RealtyId = realtyId;
             
-            model.Realty = this.realtyService.Get(realtyId);
+            //model.Realty = this.realtyService.Get(realtyId);
             
             return this.View(model);
         }
@@ -82,10 +82,10 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Update(HouseViewModel model)
         {
-            model.Realty = this.realtyService.Get(model.RealtyId);
+            //model.Realty = this.realtyService.Get(model.RealtyId);
             if (model.Id == 0)
             {
-                this.houseService.Create(model.Realty, model.Address,model.Details);
+                this.houseService.Create(model.RealtyId, model.Address,model.Details);
             }
             else
             {

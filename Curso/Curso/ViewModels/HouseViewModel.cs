@@ -10,9 +10,7 @@ namespace Curso.ViewModels
 {
     public class HouseViewModel
     {
-        private int p;
-        private string p_2;
-        private string p_3;
+        
 
          public virtual Realty Realty { get; set; }
 

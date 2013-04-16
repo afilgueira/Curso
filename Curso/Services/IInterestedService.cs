@@ -15,6 +15,7 @@ namespace Services
         /// The System.Collections.Generic.List`1[T -&gt; Domain.Interested].
         /// </returns>
         IList<Interested> GetAll();
+        IList<Interested> GetAll(int a);
 
         /// <summary>
         /// The get.
