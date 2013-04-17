@@ -16,7 +16,7 @@
             this.Map(realty => realty.Address).Not.Nullable().Length(50).Not.LazyLoad();
             this.Map(realty => realty.Details).Not.Nullable().Length(200).Not.LazyLoad();
             this.References(realty => realty.Manager).Not.Nullable().Not.LazyLoad();
-            this.HasMany(realty => realty.Homes).AsBag().Table("Home").KeyColumn("Realty_Id").Inverse().LazyLoad();
+            this.HasMany(realty => realty.Homes).AsBag().Table("Home").KeyColumn("Realty_Id").LazyLoad().Cascade.Delete();
         }
     }
 }

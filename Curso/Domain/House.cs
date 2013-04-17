@@ -68,9 +68,14 @@
         /// </summary>
         public virtual void Delete()
         {
-            foreach (var interested in this.Interesteds)
+            //foreach(Interested i in this.Interesteds)
+            //{
+            //    this.RemoveInterested(i);
+            //}
+
+            for (int i = 0; this.Interesteds.Count !=0; i++)
             {
-                this.RemoveInterested(interested); // Desvinculo la casa del interesado
+                this.RemoveInterested(this.Interesteds[0]);
             }
 
             this.Realty.Homes.Remove(this);

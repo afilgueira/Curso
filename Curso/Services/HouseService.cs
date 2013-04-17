@@ -37,7 +37,7 @@ namespace Services
             IList<House> result = null;
             this.houseRepository.GetSessionFactory().SessionInterceptor(() =>
             {
-                result = this.houseRepository.GetAll();
+                result = this.houseRepository.GetAll().Where(m => m.Interesteds.Count>=0).ToList();
             });
 
             return result;

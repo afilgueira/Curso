@@ -45,7 +45,7 @@ namespace Curso.Controllers
             //    model.Add(new ManagerViewModel(m.Id, m.Name, m.Age));
             // }
 
-            List<ManagerViewModel> model = this.managerService.GetAll().Select(m => new ManagerViewModel(m.Id, m.Name, m.Age)).ToList();
+            List<ManagerViewModel> model = this.managerService.GetAll().Select(m => new ManagerViewModel(m.Id, m.Name, m.Age,m.Realties)).ToList(); 
             return this.View(model);
         }
 
@@ -105,8 +105,15 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Delete(int id)
         {
-            this.managerService.Delete(id);
-            return this.RedirectToAction("Index");
+            try
+            {
+                this.managerService.Delete(id);
+            }
+            catch (Domain.Exceptions.ManagerHasRealtiesException e)
+            {
+                
+            }
+                return this.RedirectToAction("Index");
         }
     }
 }

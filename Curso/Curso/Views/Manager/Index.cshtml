@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Lista de Managers";
 }
 
@@ -23,9 +24,12 @@
                             <a href="@Url.Action("Edit","Manager", new { id = m.Id })">
                                 <span class="icon icon-pencil"/>
                             </a>&nbsp;
+                            @if (m.Realties.Count == 0)
+                            {
                             <a href="@Url.Action("Delete", "Manager", new { id = m.Id })">
                                 <span class="icon icon-remove-3"/>
                             </a>
+                            }
                         </td>
                     </tr>
                 }
@@ -33,6 +37,7 @@
         </table>
     </div>
 </div>
+</script>
 <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
     <div class="container">
         <div class="row-fluid metro">

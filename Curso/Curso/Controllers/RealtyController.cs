@@ -39,7 +39,7 @@ namespace Curso.Controllers
         public ActionResult Index()
         {
             
-            List<RealtyViewModel> model = this.realtyService.GetAll().Select(m => new RealtyViewModel(m.Id, m.Address, m.Details,m.Manager)).ToList();
+            List<RealtyViewModel> model = this.realtyService.GetAll().Select(m => new RealtyViewModel(m.Id, m.Address, m.Details,m.Manager,m.Homes)).ToList();
             
             return this.View(model);
         }
@@ -112,7 +112,8 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Delete(int id)
         {
-            this.realtyService.Delete(id);
+             this.realtyService.Delete(id);
+            
             return this.RedirectToAction("Index");
         }
 

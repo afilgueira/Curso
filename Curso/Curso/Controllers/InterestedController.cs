@@ -44,7 +44,7 @@ namespace Curso.Controllers
             //    model.Add(new ManagerViewModel(m.Id, m.Name, m.Age));
             // }
 
-            List<InterestedViewModel> model = this.interestedService.GetAll().Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone)).ToList();
+            List<InterestedViewModel> model = this.interestedService.GetAll().Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone,m.Homes)).ToList();
             return this.View(model);
         }
 
@@ -105,7 +105,8 @@ namespace Curso.Controllers
         public ActionResult Delete(int id)
         {
             this.interestedService.Delete(id);
-            return this.RedirectToAction("Index");
+            
+                return this.RedirectToAction("Index");
         }
     
 

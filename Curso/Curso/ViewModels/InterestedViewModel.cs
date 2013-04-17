@@ -27,7 +27,7 @@ namespace Curso.ViewModels
         /// <summary>
         /// Gets the homes.
         /// </summary>
-        public List<House> Homes { get; set; }
+        public IList<House> Homes { get; set; }
 
         public virtual Interested Interested { get; set; }
 
@@ -50,6 +50,14 @@ namespace Curso.ViewModels
             this.Name = name;
             this.Phone = phone;
             this.Homes = new List<House>();
+        }
+
+        public InterestedViewModel(int id, string name, string phone, IList<House> houses)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Phone = phone;
+            this.Homes = houses;
         }
 
         public InterestedViewModel(int id, string name, string phone,int houseId)

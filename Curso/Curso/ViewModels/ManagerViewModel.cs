@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
+using Domain;
+
 namespace Curso.ViewModels
 {
     /// <summary>
@@ -21,7 +23,8 @@ namespace Curso.ViewModels
         /// </summary>
         public int Age { get; set; }
 
-        
+        public virtual IList<Realty> Realties { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerViewModel"/> class.
         /// </summary>
@@ -39,6 +42,14 @@ namespace Curso.ViewModels
             this.Id = id;
             this.Name = name;
             this.Age = age;
+        }
+
+        public ManagerViewModel(int id, string name, int age, IList<Realty> realties)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Age = age;
+            this.Realties=realties;
         }
 
         /// <summary>

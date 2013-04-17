@@ -69,6 +69,16 @@ namespace Curso.ViewModels
             this.Homes = new List<House>();
         }
 
+        public RealtyViewModel(int id, string address, string details, Manager manager, IList<House> houses)
+        {
+            this.Id = id;
+            this.Address = address;
+            this.Details = details;
+            this.Hire(manager);
+            this.ManagerName = manager.Name;
+            this.Homes = houses;
+        }
+
         private void Hire(Manager manager)
         {
             this.Manager = manager;

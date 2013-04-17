@@ -57,6 +57,15 @@ namespace Curso.ViewModels
             this.InterestedPeople = new List<Interested>();
         }
 
+        public HouseViewModel(int id, Realty realty, string address, string details,IList<Interested> ints)
+        {
+            this.Id = id;
+            this.Assign(realty);
+            this.Address = address;
+            this.Details = details;
+            this.InterestedPeople = ints;
+        }
+
         public HouseViewModel() { }
 
        

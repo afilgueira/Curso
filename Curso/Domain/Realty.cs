@@ -85,10 +85,17 @@
         public virtual void Delete()
         {
             this.Fire();
-            foreach (var home in this.Homes)
+            
+            //foreach (var home in this.Homes)
+            //{
+            //    home.Delete();
+                
+            //}
+            for (int i = 0; this.Homes.Count > 0; i++)
             {
-                home.Delete();
+                this.Homes[i].Delete();
             }
+            
         }
 
         /// <summary>

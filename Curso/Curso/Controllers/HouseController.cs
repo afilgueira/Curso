@@ -40,7 +40,7 @@ namespace Curso.Controllers
             
 
             
-            List<HouseViewModel> model = this.houseService.GetAll().Select(m => new HouseViewModel(m.Id,m.Realty, m.Address, m.Details)).Where(m => m.Realty.Id==realtyId).ToList();
+            List<HouseViewModel> model = this.houseService.GetAll().Select(m => new HouseViewModel(m.Id,m.Realty, m.Address, m.Details,m.Interesteds)).Where(m => m.Realty.Id==realtyId).ToList();
             
             return this.View(model);
         }
@@ -107,7 +107,9 @@ namespace Curso.Controllers
         public ActionResult Delete(int id)
         {
             int mRealtyId = this.houseService.Get(id).Realty.Id;
-            this.houseService.Delete(id);
+            
+                this.houseService.Delete(id);
+           
             return this.RedirectToAction("Index", new { realtyId = mRealtyId });
         }
     }

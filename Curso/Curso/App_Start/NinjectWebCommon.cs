@@ -70,11 +70,14 @@ namespace Curso.App_Start
 
             kernel.Bind<IRealtyRepository>().To<RealtyRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
 
-            kernel.Bind<IRealtyService>().To<RealtyService>().InSingletonScope().WithConstructorArgument("IRealtyRepository", kernel.GetService(typeof(IRealtyRepository)))
-                                                                                .WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)));
-
             kernel.Bind<IRepository<House>>().To<HouseRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
             kernel.Bind<IHouseService>().To<HouseService>().InSingletonScope().WithConstructorArgument("IRepository<House>", kernel.GetService(typeof(IRepository<House>))).WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)));
+            kernel.Bind<IRealtyService>().To<RealtyService>().InSingletonScope().WithConstructorArgument("IRealtyRepository", kernel.GetService(typeof(IRealtyRepository)))
+                                                                                .WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)))
+                                                                                .WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)))
+                                                                                .WithConstructorArgument("IRepository<House>", kernel.GetService(typeof(IRepository<House>)));
+
+           
             kernel.Bind<IInterestedService>().To<InterestedService>().InSingletonScope().WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository))).WithConstructorArgument("IRepository<House>", kernel.GetService(typeof(IRepository<House>)));
 
         }        

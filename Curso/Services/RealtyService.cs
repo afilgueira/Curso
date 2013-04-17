@@ -13,16 +13,20 @@ namespace Services
     {
         private readonly IRealtyRepository realtyRepository;
         private readonly IManagerRepository managerRepository;
+        private readonly IInterestedRepository interestedRepository;
+        private readonly IRepository<House> houseRepository;
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerService"/> class.
         /// </summary>
         /// <param name="managerRepository">
         /// The manager repository.
         /// </param>
-        public RealtyService(IRealtyRepository realtyRepository, IManagerRepository managerRepository)
+        public RealtyService(IRealtyRepository realtyRepository, IManagerRepository managerRepository, IInterestedRepository intre,IRepository<House> hos)
         {
             this.realtyRepository = realtyRepository;
             this.managerRepository = managerRepository;
+            this.interestedRepository = intre;
+            this.houseRepository = hos;
         }
 
         /// <summary>
@@ -36,7 +40,9 @@ namespace Services
             IList<Realty> result = null;
             this.realtyRepository.GetSessionFactory().SessionInterceptor(() =>
             {
-                result = this.realtyRepository.GetAll();
+                result = this.realtyRepository.GetAll().Where(m => m.Homes.Count>=0).ToList();
+                
+
             });
 
             return result;
@@ -113,6 +119,10 @@ namespace Services
             this.realtyRepository.GetSessionFactory().TransactionalInterceptor(() =>
             {
                 var realty = this.realtyRepository.Get(id);
+                foreach (var home in realty.Homes)
+                {
+                    this.houseRepository.Delete(home);
+                }
                 realty.Delete();
                 this.realtyRepository.Delete(realty);
             });

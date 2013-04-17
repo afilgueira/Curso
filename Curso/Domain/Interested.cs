@@ -66,9 +66,17 @@
         /// </summary>
         public virtual void Delete()
         {
-            foreach (var home in this.Homes)
+            //foreach (var home in this.Homes)
+            //{
+            //    home.RemoveInterested(this);
+            //}
+
+            
+
+            for (int i = 0; this.Homes.Count!=0; i++)
             {
-                home.RemoveInterested(this);
+                this.Homes[0].RemoveInterested(this);
+                
             }
         }
     }
