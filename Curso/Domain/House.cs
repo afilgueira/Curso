@@ -5,30 +5,31 @@
     /// <summary>
     /// The home.
     /// </summary>
-    public class Home
+    public class House
     {
         /// <summary>
         /// Gets the realty.
         /// </summary>
-        public virtual Realty Realty { get; private set; }
+        public virtual int Id { get; set; }
+        public virtual Realty Realty { get; set; }
 
         /// <summary>
         /// Gets the address.
         /// </summary>
-        public virtual string Address { get; private set; }
+        public virtual string Address { get; set; }
 
         /// <summary>
         /// Gets the details.
         /// </summary>
-        public virtual string Details { get; private set; }
+        public virtual string Details { get; set; }
 
         /// <summary>
         /// Gets the interested people.
         /// </summary>
-        public virtual IList<Interested> InterestedPeople { get; private set; }
+        public virtual IList<Interested> Interesteds { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Home"/> class.
+        /// Initializes a new instance of the <see cref="House"/> class.
         /// </summary>
         /// <param name="realty">
         /// The realty.
@@ -39,12 +40,12 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        public Home(Realty realty, string address, string details)
+        public  House(Realty realty, string address, string details)
         {
             this.Assign(realty);
             this.Address = address;
             this.Details = details;
-            this.InterestedPeople = new List<Interested>();
+            this.Interesteds = new List<Interested>();
         }
 
         /// <summary>
@@ -56,7 +57,7 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        public void Update(string address, string details)
+        public virtual void Update(string address, string details)
         {
             this.Address = address;
             this.Details = details;
@@ -65,11 +66,16 @@
         /// <summary>
         /// The delete.
         /// </summary>
-        public void Delete()
+        public virtual void Delete()
         {
-            foreach (var interested in this.InterestedPeople)
+            //foreach(Interested i in this.Interesteds)
+            //{
+            //    this.RemoveInterested(i);
+            //}
+
+            for (int i = 0; this.Interesteds.Count !=0; i++)
             {
-                this.RemoveInterested(interested); // Desvinculo la casa del interesado
+                this.RemoveInterested(this.Interesteds[0]);
             }
 
             this.Realty.Homes.Remove(this);
@@ -81,9 +87,9 @@
         /// <param name="interested">
         /// The interested.
         /// </param>
-        public void AddInterested(Interested interested)
+        public virtual void AddInterested(Interested interested)
         {
-            // TODO: Completar
+            this.Interesteds.Add(interested);
         }
 
         /// <summary>
@@ -92,9 +98,10 @@
         /// <param name="interested">
         /// The interested.
         /// </param>
-        public void RemoveInterested(Interested interested)
+        public virtual void RemoveInterested(Interested interested)
         {
-            // TODO: Completar
+            this.Interesteds.Remove(interested);
+            interested.Homes.Remove(this);
         }
 
         /// <summary>
@@ -103,10 +110,12 @@
         /// <param name="realty">
         /// The realty.
         /// </param>
-        private void Assign(Realty realty)
+        private  void Assign(Realty realty)
         {
             this.Realty = realty;
             realty.Homes.Add(this);
         }
+
+        public House() { }
     }
 }

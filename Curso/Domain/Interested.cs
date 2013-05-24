@@ -15,17 +15,17 @@
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public virtual string Name { get; private set; }
+        public virtual string Name { get;  set; }
 
         /// <summary>
         /// Gets the phone.
         /// </summary>
-        public virtual string Phone { get; private set; }
+        public virtual string Phone { get;  set; }
 
         /// <summary>
         /// Gets the homes.
         /// </summary>
-        public virtual IList<Home> Homes { get; private set; }
+        public virtual IList<House> Homes { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Interested"/> class.
@@ -40,9 +40,12 @@
         {
             this.Name = name;
             this.Phone = phone;
-            this.Homes = new List<Home>();
+            this.Homes = new List<House>();
         }
 
+        public Interested() 
+        { 
+        }
         /// <summary>
         /// The update.
         /// </summary>
@@ -52,7 +55,7 @@
         /// <param name="phone">
         /// The phone.
         /// </param>
-        public void Update(string name, string phone)
+        public virtual void Update(string name, string phone)
         {
             this.Name = name;
             this.Phone = phone;
@@ -61,11 +64,19 @@
         /// <summary>
         /// The delete.
         /// </summary>
-        public void Delete()
+        public virtual void Delete()
         {
-            foreach (var home in this.Homes)
+            //foreach (var home in this.Homes)
+            //{
+            //    home.RemoveInterested(this);
+            //}
+
+            
+
+            for (int i = 0; this.Homes.Count!=0; i++)
             {
-                home.RemoveInterested(this);
+                this.Homes[0].RemoveInterested(this);
+                
             }
         }
     }

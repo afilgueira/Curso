@@ -1,9 +1,12 @@
 ﻿namespace Services
 {
+    using System;
     using System.Collections.Generic;
-
-    using Domain;
+    using System.Linq;
+    using System.Text;
     using Repository.Interfaces;
+    using Domain;
+
 
     /// <summary>
     /// The manager service.
@@ -37,7 +40,7 @@
             IList<Manager> result = null;
             this.managerRepository.GetSessionFactory().SessionInterceptor(() =>
             {
-                result = this.managerRepository.GetAll();
+                result = this.managerRepository.GetAll().Where(m => m.Realties.Count>=0).ToList();
             });
 
             return result;

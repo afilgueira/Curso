@@ -72,9 +72,10 @@
             var newManager = new Manager("name2", 25);
             this.realty.Update("address2", "details2", newManager);
 
-            Assert.AreEqual("addres2", this.realty.Address);
-            Assert.AreEqual("details", this.realty.Details);
-            Assert.AreEqual(this.manager, this.realty.Manager);
+            Assert.AreEqual("address2", this.realty.Address);
+            Assert.AreEqual("details2", this.realty.Details);
+            Assert.AreEqual(newManager, this.realty.Manager);
+            Assert.IsFalse(this.manager.Realties.Contains(this.realty));
             
             // Además falta verificar algo...
         }

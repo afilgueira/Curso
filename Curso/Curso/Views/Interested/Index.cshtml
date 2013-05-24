@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Lista de Managers";
+﻿@{
+    ViewBag.Title = "Lista de Interesados";
 }
 
 <div class="row-fluid metro">
@@ -10,7 +9,8 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>Casas</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -19,17 +19,20 @@
                 {
                     <tr> 
                         <td>@m.Name</td>
-                        <td>@m.Age</td>
+                        <td>@m.Phone</td>
+                        <td><a href="@Url.Action("Index", "House", new {realtyId = m.Id })">
+                                <span class="win-label">Watch</span>
+                            </a>&nbsp;
+                        </td>
                         <td>
-                            <a href="@Url.Action("Edit","Manager", new { id = m.Id })">
+                            <a href="@Url.Action("Edit","Interested", new { id = m.Id })">
                                 <span class="icon icon-pencil"/>
                             </a>&nbsp;
-                            @if (m.Realties.Count == 0)
-                            {
-                            <a href="@Url.Action("Delete", "Manager", new { id = m.Id })">
+                            
+                            <a href="@Url.Action("Delete", "Interested", new { id = m.Id })">
                                 <span class="icon icon-remove-3"/>
                             </a>
-                            }
+                            
                         </td>
                     </tr>
                 }
@@ -37,7 +40,6 @@
         </table>
     </div>
 </div>
-</script>
 <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
     <div class="container">
         <div class="row-fluid metro">
@@ -46,7 +48,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a class="win-command" href="@Url.Action("Edit", "Manager", new {id = 0})"> <!-- ID = 0 -> New user-->
+                                <a class="win-command" href="@Url.Action("Edit", "Interested", new {id = 0})"> <!-- ID = 0 -> New user-->
                                     <span class="win-commandimage win-commandring">&#xe03e;</span>
                                     <span class="win-label">Add</span>
                                 </a>

@@ -43,7 +43,7 @@
     <Compile Include="Exceptions\ObjectAlreadyExistsException.cs" />
     <Compile Include="Exceptions\ManagerHasRealtiesException.cs" />
     <Compile Include="Exceptions\ObjectNotFoundException.cs" />
-    <Compile Include="Home.cs" />
+    <Compile Include="House.cs" />
     <Compile Include="Interested.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Realty.cs" />

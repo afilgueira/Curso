@@ -1,0 +1,44 @@
+﻿@model Curso.ViewModels.RealtyViewModel
+
+
+@{
+    ViewBag.Title = "Inmobiliaria";
+}
+
+<div class="row-fluid metro">
+    <div class="span2 offset4">
+        @using (Html.BeginForm("Update", "Realty", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Id)
+            @Html.ValidationSummary(true)
+            <div class="control-group">
+                <label class="control-label">Direccion</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Detalles</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Details)
+                    @Html.ValidationMessageFor(model => model.Details)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Manager</label>
+                <div class="controls">
+                    @Html.DropDownListFor(model => Model.ManagerId, Model.ManagersList, new { @class = "chzn-select" })
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="@Url.Action("Index", "Realty")"><button type="button" class="btn">Cancelar</button></a>
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".chzn-select").chosen({ no_results_text: "No results matched" });
+</script>

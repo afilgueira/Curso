@@ -1,33 +1,32 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
 namespace Curso.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
+    
 
     using Curso.ViewModels;
 
     using Services;
-
-    /// <summary>
-    /// The manager controller.
-    /// </summary>
-    public class ManagerController : Controller
+    public class InterestedController : Controller
     {
-        /// <summary>
+         /// <summary>
         /// The manager service.
         /// </summary>
-        private readonly IManagerService managerService;
+        private readonly IInterestedService interestedService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ManagerController"/> class.
+        /// Initializes a new instance of the <see cref="InterestedController"/> class.
         /// </summary>
-        /// <param name="managerService">
+        /// <param name="interestedService">
         /// The manager service.
         /// </param>
-        public ManagerController(IManagerService managerService)
+        public InterestedController(IInterestedService interestedService)
         {
-            this.managerService = managerService;
+            this.interestedService = interestedService;
         }
 
         /// <summary>
@@ -45,7 +44,7 @@ namespace Curso.Controllers
             //    model.Add(new ManagerViewModel(m.Id, m.Name, m.Age));
             // }
 
-            List<ManagerViewModel> model = this.managerService.GetAll().Select(m => new ManagerViewModel(m.Id, m.Name, m.Age,m.Realties)).ToList(); 
+            List<InterestedViewModel> model = this.interestedService.GetAll().Select(m => new InterestedViewModel(m.Id, m.Name, m.Phone,m.Homes)).ToList();
             return this.View(model);
         }
 
@@ -60,12 +59,12 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Edit(int id)
         {
-            var model = new ManagerViewModel();
+            var model = new InterestedViewModel();
             
             if (id != 0)
             {
-                var manager = this.managerService.Get(id);
-                model = new ManagerViewModel(manager.Id, manager.Name, manager.Age);
+                var interested = this.interestedService.Get(id);
+                model = new InterestedViewModel(interested.Id, interested.Name, interested.Phone);
             }
 
             return this.View(model);
@@ -80,15 +79,15 @@ namespace Curso.Controllers
         /// <returns>
         /// The System.Web.Mvc.ActionResult.
         /// </returns>
-        public ActionResult Update(ManagerViewModel model)
+        public ActionResult Update(InterestedViewModel model)
         {
             if (model.Id == 0)
             {
-                this.managerService.Create(model.Name, model.Age);
+                this.interestedService.Create(model.Name, model.Phone);
             }
             else
             {
-                this.managerService.Update(model.Id, model.Name, model.Age);
+                this.interestedService.Update(model.Id, model.Name, model.Phone);
             }
 
             return this.RedirectToAction("Index");
@@ -105,15 +104,11 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Delete(int id)
         {
-            try
-            {
-                this.managerService.Delete(id);
-            }
-            catch (Domain.Exceptions.ManagerHasRealtiesException e)
-            {
-                
-            }
+            this.interestedService.Delete(id);
+            
                 return this.RedirectToAction("Index");
         }
+    
+
     }
 }

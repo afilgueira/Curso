@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using FluentNHibernate.Mapping;
+
+namespace Domain.NH.Mappings
+{
+    public class HouseMapping : ClassMap<House>
+    {
+        public HouseMapping()
+        {
+            this.Id(house => house.Id).GeneratedBy.Identity();
+            this.Map(house => house.Address).Not.Nullable().Length(50).Not.LazyLoad();
+            this.Map(house => house.Details).Not.Nullable().Length(200).Not.LazyLoad();
+            this.References(house => house.Realty).Nullable().Not.LazyLoad();
+            this.HasManyToMany(house => house.Interesteds).AsBag().ParentKeyColumn("House_id").ChildKeyColumn("Interested_id").LazyLoad() ;
+        }
+    }
+}

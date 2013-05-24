@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Lista de Managers";
+﻿@{
+    ViewBag.Title = "Lista de Interesados";
 }
 
 <div class="row-fluid metro">
@@ -10,7 +9,7 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Edad</th>
+                    <th>Telefono</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -19,17 +18,11 @@
                 {
                     <tr> 
                         <td>@m.Name</td>
-                        <td>@m.Age</td>
+                        <td>@m.Phone</td>
                         <td>
-                            <a href="@Url.Action("Edit","Manager", new { id = m.Id })">
-                                <span class="icon icon-pencil"/>
-                            </a>&nbsp;
-                            @if (m.Realties.Count == 0)
-                            {
-                            <a href="@Url.Action("Delete", "Manager", new { id = m.Id })">
+                            <a href="@Url.Action("Delete", "InterestedSelection", new { id = m.Id, houseId=m.HouseId })">
                                 <span class="icon icon-remove-3"/>
                             </a>
-                            }
                         </td>
                     </tr>
                 }
@@ -37,7 +30,6 @@
         </table>
     </div>
 </div>
-</script>
 <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
     <div class="container">
         <div class="row-fluid metro">
